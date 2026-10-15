@@ -1,0 +1,33 @@
+@import "tailwindcss";
+html{
+    scroll-behavior:smooth;
+}.hero-visual-grid {
+     background-image:
+             linear-gradient(to right, rgb(255 255 255 / 0.055) 1px, transparent 1px),
+             linear-gradient(to bottom, rgb(255 255 255 / 0.055) 1px, transparent 1px);
+     background-size: 28px 28px;
+     mask-image: radial-gradient(ellipse at center, black 18%, transparent 78%);
+ }
+
+.float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.float-slower {
+    animation: float-slow 11s ease-in-out infinite reverse;
+}
+
+@keyframes float-slow {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -12px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
